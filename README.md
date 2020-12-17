@@ -2,7 +2,7 @@
 
 > 网易云音乐刷歌升级脚本
 >
-> [项目 GitHub 地址](https://github.com/Secriy/CloudMusic-LevelUp)
+> [项目 GitHub 地址](https://github.com/Ysnsn/CloudMusic-LevelUp)
 
 ## 脚本功能
 
@@ -11,87 +11,6 @@
 3. 刷音乐播放量，返回具体数值
 4. 使用 GitHub Actions 挂脚本
 
-## 使用方式
-
-### 安装依赖
-
-```shell
-pip install -r requirements.txt
-```
-
-### 执行脚本
-
-脚本使用命令行参数输入变量，其中手机号和密码的32位MD5值为必填字段，其余均为可选字段。
-
-```shell
-# python action.py -h 查看usage
-usage: action.py [-h] [-s SCKEY] [-l [PLAYLIST [PLAYLIST ...]]] phone password
-
-positional arguments:
-  phone                 your Phone Number
-  password              MD5 value of the password
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -s SCKEY              SCKEY of the Server Chan
-  -l [PLAYLIST [PLAYLIST ...]]
-                        your playlist
-```
-
-示例：
-
-```shell
-python action.py 10000000000 4******************************1 -s SSS111111T111112f3e42e111172a041111a11130451115b5111d11 -l 2133132 2311315 2434234
-```
-
-![](README/image-20201113151600263.png)
-
-密码的 MD5 值计算可以在[MD5 在线加密](https://md5jiami.51240.com/)上进行，取 32 位小写值
-
-![](README/image-20200829112617823.png)
-
-执行结果：
-
-![](README/image-20200830161354842.png)
-
-因为我今天已经刷满了，所以就不累计听歌量了。
-
-### 自定义歌单
-
-鉴于网易云每天推荐的歌单不太够，就增加了自定义歌单的功能，也是使用参数的形式，支持多个歌单输入，例如：
-
-```shell
-# 必须添加-l指定参数
-python action.py 手机号 32位MD5密码加密值 -l 5173689994 4901511925
-```
-
-### Server 酱微信推送
-
-![](README/image-20201110001457321.png)
-
-Server 酱可以绑定微信，将脚本每次的运行结果推送到你的微信上。
-
-使用方法：
-
-1. 访问[Server 酱官网](http://sc.ftqq.com/3.version)，点击**登入**，关联 GitHub 账号
-
-   ![](README/image-20201110001821697.png)
-
-   ![](README/image-20201110001905904.png)
-
-2. 登入成功后，点击**微信推送**按照网站上的步骤关注公众号，并验证
-
-3. 点击**发送消息**，找到自己的调用代码，并复制
-
-   ![](README/image-20201110002226781.png)
-
-4. 执行脚本时带参数`-s`指定调用代码
-
-   用例：
-
-   ```shell
-   python action.py 手机号 32位MD5密码加密值 -s 调用代码
-   ```
 
 ## GitHub Actions 部署
 
